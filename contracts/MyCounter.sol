@@ -8,10 +8,10 @@ contract MyCounter {
   uint count;
 
     /**
-     * @dev Initializes the contract setting the count to an initial value.
+     * @dev Initializes the contract by setting the count to 0.
      */
-  constructor(uint initialCount) {
-    count = initialCount;
+  constructor() {
+    count = 0;
   }
 
     /**
