@@ -18,6 +18,16 @@ contract("MyCounter", function (accounts) {
 
   it("Verify contract initialized", async function () {
     let initialValue = new BN(0);
+
     expect(await this.contract.getCount()).to.be.bignumber.equal(initialValue);
+  });
+
+  it("Increment counter 3 times", async function () {
+    let finalValue = new BN(3);
+
+    await this.contract.increment();
+    await this.contract.increment();
+    await this.contract.increment();
+    expect(await this.contract.getCount()).to.be.bignumber.equal(finalValue);
   });
 });
